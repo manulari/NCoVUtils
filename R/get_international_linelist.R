@@ -40,7 +40,7 @@ get_international_linelist <- function(countries = NULL, cities = NULL, province
   linelist <- suppressWarnings(
     suppressMessages(
       try(R.utils::withTimeout(mem_read(url) %>%
-        tibble::as_tibble(), timeout = 15, onTimeout = "error"),
+        tibble::as_tibble(), timeout = 300, onTimeout = "error"),
         silent = TRUE)
     )
   )
